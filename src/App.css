@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+.ws-widget-section * {
+  margin:0;
+  padding:0;    
+}
+ 
+.ws-widget-section {
+  display: grid;
+  max-width: 1170px;  
+  /* set the max-width  with app block settigs   */
+  margin: 0 auto;
+  padding: 0 30px;
+ /* block settigs   */
+ gap:30px;
+  /* block settigs   */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ws-items-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  /*  block settigs   */
+  column-gap: 15px;
+  /*  block settigs   */
+  row-gap: 15px;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+.ws_card_image_container {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img.ws_product_card_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.ws-price-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+.ws_image_wrapper {
+  overflow: hidden;
+}
+
+.ws_card_header:before {
+  content: "";
+  width: 0;
+  height: 0;
+  padding-bottom: 100%;
+  display: block;
+}
+
+
+
+.ws_card_header {
+  position: relative;
+  background: #f7f7f7;
+}
+
+.ws_card_wrapper {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  /* manage by  no of product */
+  flex: 0 0 calc(20% - 15px*4 / 5);
+  gap:10px;
+} 
+.ws_card_info.ws_card_buttom {
+  flex-grow: 1; /* Allow the card info section to grow */
+   display: flex;
+   flex-direction: column; /* Stack children vertically */
+   gap:10px;
+     
+ }
+ 
+ .ws_card_info_top {
+   flex-grow: 1; /* Allow the title to grow to fill space */
+   overflow: hidden; /* Hide overflowing text */ 
+ }
+
+
+ .ws_card_header:has(.ws_card_image_container img:nth-child(2)):hover img:nth-child(1) {
+  opacity: 0;
+}
+
+.ws_card_header:has(.ws_card_image_container img:nth-child(2)):hover img:nth-child(2) {
+  opacity: 1;
+} 
+
+
+
+/* SLIDER  */
+.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {height:100%;}
+
+
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
 }
 
-.App-link {
-  color: #61dafb;
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 3px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.autoplay-progress span{ 
+font-size: 12px;
 }

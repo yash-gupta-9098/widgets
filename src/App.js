@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 const storefrontAccessToken = 'da7f59fb8c1243a59a17bc02673cc9fd'; // Use the token you obtained
 const shopUrl = 'https://yash-demo-store-evm.myshopify.com/api/2023-10/graphql.json';
 
