@@ -30,7 +30,7 @@ export function ProductPrice({price , comparePrice , wsSettings , options}) {
 
         {
             // minMaxPrice[0] == minMaxPrice[1] && (
-                <Heading text={price.amount} as="p"  className="ws_Product_Price"/>
+                <Heading text={window?.ShopifyWsObj.wsGetMnyFrmt(price.amount * 100)} as="p"  className="ws_Product_Price"/>
                 // )
         }
 

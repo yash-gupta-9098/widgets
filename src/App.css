@@ -24,7 +24,12 @@
   overflow: hidden;
 }
 
+h2.ws_widgets_heading {
+  text-align:var(--ws--heading-title-align);
+  font-size:var(--ws--heading-font-size);
+  color:var(--ws--heading-font-color);
 
+} 
 
 
 .ws_card_image_container {
@@ -72,7 +77,7 @@ img.ws_product_card_image {
   flex-direction: column;
   overflow: hidden;
   /* manage by  no of product */
-  flex: 0 0 calc(20% - 15px*4 / 5);
+  flex: 0 0 calc((100% / var(--ws-products-per-slider) ) - 15px * (var(--ws-products-per-slider) - 1 ) / var(--ws-products-per-slider));
   gap:10px;
 } 
 .ws_card_info.ws_card_buttom {
@@ -144,4 +149,50 @@ img.ws_product_card_image {
 
 .autoplay-progress span{ 
 font-size: 12px;
+}
+
+
+.ws_Product_Button {
+  all: unset;
+  background: var(--ws--addcart-button-background);
+  padding: 10px 15px;
+  color: var(--ws--addcart-button-font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+} 
+
+
+.ws_Product_option_wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  padding: 1px;
+}
+
+
+.ws_Product_options {
+  all: unset;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    box-shadow: 0 0 0 1px #e6e6e6;
+    padding: 0 3rem 0 1rem;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+} 
+
+
+.ws_dropdown_arrow {
+
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%); 
+  cursor: pointer;
+  z-index: -1;
+
 }

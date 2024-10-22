@@ -58,6 +58,7 @@ export function Select({
     return (      
         <>
         {options && options.length > 1 && 
+        <>
         <select
             id={id}
             onChange={handleSelectChange}
@@ -74,6 +75,8 @@ export function Select({
                 </option>
             ))}
         </select>
+        <svg className="ws_dropdown_arrow" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64" xmlSpace="preserve"  > <g> <polyline fill="none" stroke="#000000" strokeWidth={2} strokeLinejoin="bevel" strokeMiterlimit={10} points="15,24 32,41  49,24  " /> </g> </svg>
+        </>
         }
         </>
     );

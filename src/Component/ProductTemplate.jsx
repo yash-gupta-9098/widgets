@@ -85,31 +85,31 @@ function ProductTemplate({product ,
 
               <div className='ws_card_info_top'>
 
-    {/* {
-      wsSettings?.general_setting.show_product_title && ( */}
-        <Heading text={product.title} as="h4" className="ws_Product_title"/>
-      {/* )
-    }  */}
+      {
+      wsSettings?.show_product_title && (
+        <Heading text={product.node.title} as="h4" className="ws_Product_title"/>
+      )
+    } 
 
-         {/* {wsSettings?.general_setting.show_price && price && (typeof price !== 'undefined') && (   */}
+         {
+         wsSettings?.show_price && price && (typeof price !== 'undefined') && (  
             <div className="ws_product_price_wrapper">  
               <ProductPrice comparePrice= {comparePrice} price={price} wsSettings={wsSettings} options={product?.node.variants.edges}/>
             </div>
-         {/* )
-        }   */}
+         )
+        }
           
-      
-      <Select vid ={vid} comparePrice={comparePrice} setComparePrice={setComparePrice} setVid={setVid} imageUrl={imageUrl} setImageUrl={setImageUrl} id={product.id}  price={price}  setPrice={setPrice} options={product?.node.variants.edges} placeholder="Select The Variant"/>
+        <div className='ws_Product_option_wrapper'>
+          <Select vid ={vid} comparePrice={comparePrice} setComparePrice={setComparePrice} setVid={setVid} imageUrl={imageUrl} setImageUrl={setImageUrl} id={product.id}  price={price}  setPrice={setPrice} options={product?.node.variants.edges} placeholder="Select The Variant"/>
+        </div>
       </div>
       {
-        // wsSettings?.general_setting.enable_add_to_cart && (
-          <WiserButton  text="Add to cart" type="submit" role="button" className="Product_Button" onClick={ws_add_click} />
-        // )
+        wsSettings?.enable_add_to_cart && (
+          <WiserButton  text={wsSettings?.add_to_cart_text} type="submit" role="button" className="ws_Product_Button" onClick={ws_add_click} />
+        )
       }
       
-      {/* <div className='skeleton_wrapper'> 
-        <SkeletonBodyText line="4"/>
-      </div>   */}
+      
     </div>
 
     </>
